@@ -80,25 +80,7 @@ Util.sumPrime = function(n)
  */
 Util.fizzBuzz = function(n)
 {
-  var arrayFizz=Array();
-    while(n>0)
-    {
-        if((n % 3)==0 && (n % 5)==0)
-			{
-				arrayFizz.push("FizzBuzz")
-			}
-		else if((n % 3)==0)
-			{
-				arrayFizz.push("Fizz");
-			}
-		else if((n % 5)==0)
-			{
-				arrayFizz.push("Buzz");
-			}
-		else arrayFizz.push(n);
-		n--;
-    }
-    return arrayFizz;
+
 };
 
 /**
@@ -112,23 +94,7 @@ Util.fizzBuzz = function(n)
  */
 Util.cipher = function (phrase)
 {
-    var maPhraseChar=phrase.split('');
-    var resultat="";
-    maPhraseChar.forEach(function(c)
-    {
-      var char=c.charCodeAt(0);
-        if(char==90)
-        {
-            char=64;
-        }
-        if(char==122)
-        {
-          char=96;
-        }
-          resultat+=String.fromCharCode(char+1);
-      }
-    );
-    return resultat;
+
 };
 
 module.exports = Util;
