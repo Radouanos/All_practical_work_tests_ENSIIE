@@ -76,4 +76,4 @@ describe('cipher',function(){
   test('cipher de Z',()=>{
       expect(Util.cipher("Z")).toEqual("A");
   });
-})
+});
