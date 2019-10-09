@@ -42,8 +42,8 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    includes(interval)
-    {
+    includes(interval) {
+        return this.end >= interval.end && this.start <= interval.start;
     };
 
     /**
