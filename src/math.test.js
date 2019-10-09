@@ -52,7 +52,11 @@ describe('sumPrime',function(){
   test('test number : 2 => 2',() =>{
         expect(Util.sumPrime(2)).toBe(2)
       });
+  test('test number : 8 => 17',() =>{
+        expect(Util.sumPrime(8)).toBe(17)
+    });
 });
+
 describe('fizzBuzz',function(){
   test('fizzBuzz de 2',()=>{
         expect(Util.fizzBuzz(2)).toEqual([2,1]);
@@ -61,6 +65,7 @@ describe('fizzBuzz',function(){
 	  expect(Util.fizzBuzz(5)).toEqual(["Buzz",4,"Fizz",2,1])
 	});
 });
+
 describe('cipher',function(){
   test('cipher de A',()=>{
       expect(Util.cipher("A")).toEqual("B");
