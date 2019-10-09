@@ -36,7 +36,6 @@ Util.isPrime = function (n) {
 
 };
 
-
 /**
  * Additionne l'ensemble des nombres premiers de 2 à n
  *

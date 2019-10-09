@@ -56,5 +56,3 @@ describe('sumPrime',function(){
         expect(Util.sumPrime(8)).toBe(17)
     });
 });
-
-
