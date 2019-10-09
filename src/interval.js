@@ -24,7 +24,6 @@ class Interval {
      * @returns {boolean}
      */
     overlaps(interval) {
-
     }
 
     /**
