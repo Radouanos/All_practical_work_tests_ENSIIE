@@ -30,3 +30,15 @@ describe('Interval-Includes',function()
 		expect(obj4.includes(obj3)).toBe(false);
 	});
 });
+describe('Interval-Union',function() {
+	test('Test Union between Interval(0,1) and Interval(2,5) => [0,1][2,5]', () => {
+		var objet1 = new Interval(0, 1);
+		var objet2 = new Interval(2, 5);
+		expect(objet1.union(objet2)).toEqual([new Interval(0, 1), new Interval(2, 5)]);
+	});
+	test('Test Union between Interval(0,2) and Interval(1,5) => [0,5]', () => {
+		var objet1 = new Interval(0, 2);
+		var objet2 = new Interval(1, 5);
+		expect(objet1.union(objet2)).toEqual([new Interval(0, 5)]);
+	});
+});
