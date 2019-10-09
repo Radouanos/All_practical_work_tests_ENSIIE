@@ -1,0 +1,50 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "name": "Unit test"
+    },
+    {
+      "id": 1,
+      "name": "test",
+      "price": 6.1,
+      "added_at": "2019-01-01"
+    },
+    {
+      "id": 1,
+      "name": "Unit test"
+    },
+    {
+      "id": 1,
+      "name": "Unit test"
+    },
+    {
+      "id": 1,
+      "name": "Unit test"
+    },
+    {
+      "id": 2,
+      "name": "test 2",
+      "price": 10,
+      "added_at": "2019-09-27"
+    },
+    {
+      "id": 2,
+      "name": "test 2",
+      "price": 10,
+      "added_at": "2019-09-27"
+    },
+    {
+      "id": 2,
+      "name": "test 2",
+      "price": 10,
+      "added_at": "2019-09-27"
+    },
+    {
+      "id": 2,
+      "name": "test 2",
+      "price": 10,
+      "added_at": "2019-09-27"
+    }
+  ]
+}
