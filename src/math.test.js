@@ -45,3 +45,14 @@ describe('isPrime', function () {
         }
     );
 });
+describe('sumPrime',function(){
+  test('test number : 6 => 10',()=>{
+        expect(Util.sumPrime(6)).toBe(10)
+      });
+  test('test number : 2 => 2',() =>{
+        expect(Util.sumPrime(2)).toBe(2)
+      });
+  test('test number : 8 => 17',() =>{
+        expect(Util.sumPrime(8)).toBe(17)
+    });
+});
