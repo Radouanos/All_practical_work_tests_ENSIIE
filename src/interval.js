@@ -24,7 +24,7 @@ class Interval {
      * @returns {boolean}
      */
     overlaps(interval) {
-    }
+    };
 
     /**
      * Retourne true si cet interval contient le paramètre interval

@@ -57,6 +57,7 @@ describe('sumPrime',function(){
     });
 });
 
+
 describe('fizzBuzz',function(){
   test('fizzBuzz de 2',()=>{
         expect(Util.fizzBuzz(2)).toEqual([2,1]);
