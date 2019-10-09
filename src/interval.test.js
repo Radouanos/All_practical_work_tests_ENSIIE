@@ -1,5 +1,5 @@
 const Interval = require('./interval');
-describe('interval',function()
+describe('Overlaps',function()
 {
 	test('Test overlaps between Interval(0,1) and Interval(0,3) => true',() =>
 	{
@@ -14,6 +14,7 @@ describe('interval',function()
 		expect(obj1.overlaps(obj2)).toBe(false);
 	});
 });
+
 describe('Interval-Includes',function()
 {
 	test('Test includes between Interval(0,1) and Interval(0,3) => true',() =>

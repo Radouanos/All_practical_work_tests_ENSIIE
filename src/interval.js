@@ -4,14 +4,14 @@ class Interval {
         this.end = end
     }
 
-    toString() 
-	{
+    toString()
+    {
         return "[" + this.start + "," + this.end + "]";
     }
-	
+
     /**
      * Exemple 1 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        
+     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval2 =                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.overlaps(interval2) => true
      *
@@ -24,8 +24,7 @@ class Interval {
      * @returns {boolean}
      */
     overlaps(interval) {
-        return this.end > interval.start && this.start < interval.end;
-    }
+    };
 
     /**
      * Retourne true si cet interval contient le paramètre interval
@@ -63,8 +62,8 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    union(interval) {
-
+    union(interval)
+    {
     };
 
     /**
@@ -83,7 +82,8 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval) {
+    intersection(interval)
+    {
 
     };
 
@@ -103,7 +103,8 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interval) {
+    exclusion(interv)//2
+    {
 
     };
 }
