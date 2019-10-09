@@ -52,23 +52,18 @@ describe('sumPrime',function(){
   test('test number : 2 => 2',() =>{
         expect(Util.sumPrime(2)).toBe(2)
       });
+    test('test number : 8 => 17',() =>{
+        expect(Util.sumPrime(8)).toBe(17)
+    });
 });
 describe('fizzBuzz',function(){
   test('fizzBuzz de 2',()=>{
         expect(Util.fizzBuzz(2)).toEqual([2,1]);
   });
-  test('fizzBuzz de 5',() => {
-	  expect(Util.fizzBuzz(5)).toEqual(["Buzz",4,"Fizz",2,1])
-	});
+    test('fizzBuzz de 3',()=>{
+        expect(Util.fizzBuzz(3)).toEqual(["Fizz",2,1]);
+    });
+    test('fizzBuzz de 8',()=>{
+        expect(Util.fizzBuzz(8)).toEqual([8,7,"Fizz","Buzz",4,"Fizz",2,1]);
+    });
 });
-describe('cipher',function(){
-  test('cipher de A',()=>{
-      expect(Util.cipher("A")).toEqual("B");
-  });
-  test('cipher de Test',()=>{
-      expect(Util.cipher("Test")).toEqual("Uftu");
-  });
-  test('cipher de Z',()=>{
-      expect(Util.cipher("Z")).toEqual("A");
-  });
-})

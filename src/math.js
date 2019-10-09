@@ -112,23 +112,7 @@ Util.fizzBuzz = function(n)
  */
 Util.cipher = function (phrase)
 {
-    var maPhraseChar=phrase.split('');
-    var resultat="";
-    maPhraseChar.forEach(function(c)
-    {
-      var char=c.charCodeAt(0);
-        if(char==90)
-        {
-            char=64;
-        }
-        if(char==122)
-        {
-          char=96;
-        }
-          resultat+=String.fromCharCode(char+1);
-      }
-    );
-    return resultat;
+
 };
 
 module.exports = Util;
