@@ -44,7 +44,7 @@ class Interval {
      * @returns {boolean}
      */
     includes(interval) {
-
+        return this.end >= interval.end && this.start <= interval.start;
     };
 
     /**
@@ -63,8 +63,14 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    union(interval) {
-
+    union(interval)
+    {
+                if(this.overlaps(interval)){
+                    return [new Interval(Math.min(this.start, interval.start),Math.max(this.end, interval.end))]
+                }
+                else {
+                    return [new Interval(Math.min(this.start, interval.start), Math.min(this.end, interval.end)), new Interval(Math.max(this.start, interval.start), Math.max(this.end, interval.end))];
+                }
     };
 
     /**
