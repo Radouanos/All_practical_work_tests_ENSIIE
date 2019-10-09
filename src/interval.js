@@ -24,8 +24,7 @@ class Interval {
      * @returns {boolean}
      */
     overlaps(interval) {
-        return this.end > interval.start && this.start < interval.end;
-    }
+    };
 
     /**
      * Retourne true si cet interval contient le paramètre interval
