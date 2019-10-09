@@ -36,7 +36,6 @@ Util.isPrime = function (n) {
 
 };
 
-
 /**
  * Additionne l'ensemble des nombres premiers de 2 à n
  *
@@ -80,25 +79,7 @@ Util.sumPrime = function(n)
  */
 Util.fizzBuzz = function(n)
 {
-  var arrayFizz=Array();
-    while(n>0)
-    {
-        if((n % 3)==0 && (n % 5)==0)
-			{
-				arrayFizz.push("FizzBuzz")
-			}
-		else if((n % 3)==0)
-			{
-				arrayFizz.push("Fizz");
-			}
-		else if((n % 5)==0)
-			{
-				arrayFizz.push("Buzz");
-			}
-		else arrayFizz.push(n);
-		n--;
-    }
-    return arrayFizz;
+
 };
 
 /**
