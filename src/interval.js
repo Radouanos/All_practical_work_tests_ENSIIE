@@ -105,7 +105,7 @@ class Interval {
             {
                 if(this.end<interval.end)
                 {
-                    return new interval(this.start,this.end);
+                    return new Interval(this.start,this.end);
                 }
                 else return new Interval(this.start,interval.end);
             }
@@ -145,18 +145,17 @@ class Interval {
                 {
                     return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
                 }
-                else return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
-            } else if(this.start>=interv.start && this.end>=interv.start)
+                else return [new Interval(this.start,interv.start),new Interval(interv.end,this.end)];
+            }
+                else if(this.start>=interv.start && this.end<=interv.end)
             {
-                if(this.start<=interv.end)
-                {
-                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
-                }
-                else
-                {
-                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
-                }
-            } else if(interv.start<=this.start && this.start>=interv.end) {
+                return [new Interval(interv.start, this.start), new Interval(this.end, interv.end)];
+            }
+                else if(this.start>=interv.start && this.end>=interv.end)
+            {
+                return [new Interval(interv.start, this.start), new Interval(interv.end, this.end)];
+            }
+             else if(interv.start<=this.start && this.start>=interv.end) {
                 return [new Interval(interv.start, interv.end), new Interval(this.start, this.end)];
             }
         }
