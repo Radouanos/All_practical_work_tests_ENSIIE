@@ -110,6 +110,7 @@ class Interval {
                 else return new Interval(this.start,interval.end);
             }
         }
+        else return [];
     };
 
     /**
@@ -128,9 +129,45 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interv)//2
+   exclusion(interv)//2
     {
-
+        //var interv;
+        if(this.overlaps(interv))
+        {
+            //interv=this.intersection(interval);
+            if(this.start<=interv.start && this.end<=interv.start)
+            {
+                return [new Interval(this.start,this.end),new Interval(interv.start,interv.end)];
+            }
+            else if(this.start<=interv.start && this.end>=interv.start )
+            {
+                if(this.end<=interv.end)
+                {
+                    return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
+                }
+                else return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
+            } else if(this.start>=interv.start && this.end>=interv.start)
+            {
+                if(this.start<=interv.end)
+                {
+                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
+                }
+                else
+                {
+                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
+                }
+            } else if(interv.start<=this.start && this.start>=interv.end) {
+                return [new Interval(interv.start, interv.end), new Interval(this.start, this.end)];
+            }
+        }
+        else
+        {
+            if(this.start<interv.start)
+            {
+                return [new Interval(this.start,this.end),interv];
+            }
+            else return [interv,new Interval(this.start,this.end)];
+        }
     };
 }
 
