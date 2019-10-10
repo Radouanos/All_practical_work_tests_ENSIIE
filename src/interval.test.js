@@ -53,10 +53,25 @@ describe('test intersection',function()
 	});
 	test('intersection between (0,6) and (2,8)',() =>
 	{
+		var obj1= new Interval(2,6);
+		var obj2=new Interval(0,4);
+		expect(obj2.intersection(obj1)).toEqual(new Interval(2,4));
+	});
+	test('intersection between (0,8) and (2,6)',() => {
+		var obj1= new Interval(2,6);
+		var obj2=new Interval(0,8);
+		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
+	});
+	test('intersection between (0,8) and (2,8)',() => {
 		var obj1= new Interval(0,6);
 		var obj2=new Interval(2,8);
 		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
-	})
+	});
+	test('intersection between (0,8) and (2,6)',() => {
+		var obj1= new Interval(0,8);
+		var obj2=new Interval(2,6);
+		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
+	});
 });
 
 describe('test exclusion',function()
@@ -72,5 +87,23 @@ describe('test exclusion',function()
 		var obj1= new Interval(0,6);
 		var obj2=new Interval(4,8);
 		expect(obj2.exclusion(obj1)).toEqual([new Interval(0,4),new Interval(6,8)]);
+	});
+	test('Exclusion between (0,3) and (2,6)',()=>
+	{
+		var obj1= new Interval(2,6);
+		var obj2=new Interval(0,3);
+		expect(obj2.exclusion(obj1)).toEqual([new Interval(0,2),new Interval(3,6)]);
+	});
+	test('Exclusion between (0,6) and (2,4)',()=>
+	{
+		var obj1= new Interval(2,4);
+		var obj2=new Interval(0,6);
+		expect(obj2.exclusion(obj1)).toEqual([new Interval(0,2),new Interval(4,6)]);
+	});
+	test('Exclusion between (0,8) and (2,4)',()=>
+	{
+		var obj1= new Interval(0,8);
+		var obj2=new Interval(2,4);
+		expect(obj2.exclusion(obj1)).toEqual([new Interval(0,2),new Interval(4,8)]);
 	});
 });

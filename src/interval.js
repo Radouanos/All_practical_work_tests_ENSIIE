@@ -145,7 +145,7 @@ class Interval {
                 {
                     return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
                 }
-                else return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
+                else return [new Interval(this.start,interv.start),new Interval(interv.end,this.end)];
             } else if(this.start>=interv.start && this.end>=interv.start)
             {
                 if(this.start<=interv.end)
