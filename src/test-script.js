@@ -9,3 +9,4 @@ repository.save({
 });
 console.log(repository.getTotalCount());
 console.log(repository.getTotalPrice());
+console.log(repository.getBookByName("test1"));
