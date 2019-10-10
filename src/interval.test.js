@@ -67,7 +67,7 @@ describe('test intersection',function()
 		var obj2=new Interval(2,8);
 		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
 	});
-	test('intersection between (0,8) and (2,6)',() => {
+	test('intersection between (2,6) and (0,8)',() => {
 		var obj1= new Interval(0,8);
 		var obj2=new Interval(2,6);
 		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
