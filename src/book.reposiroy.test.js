@@ -40,3 +40,16 @@ describe('book repository : Total price',() =>
         expect(repository.getTotalPrice()).toBe(25);
     });
 });
+describe('book repository : Book by name',() =>
+{
+    test('Test get book by name',() =>
+    {
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            find : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue("{ id: 1, name: 'test1', price: 6.1, added_at: '2019-01-01' }")
+        };
+        const repository = new BookRepository(dbMock);
+        expect(repository.getBookByName("test1")).toBe("{ id: 1, name: 'test1', price: 6.1, added_at: '2019-01-01' }");
+    });
+});

@@ -38,6 +38,7 @@ class BookRepository {
      */
     getBookByName(bookName)//4
     {
+        return this.db.get('books').find({name:bookName}).value();
     }
 
     /**
