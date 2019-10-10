@@ -1,5 +1,5 @@
 const Interval = require('./interval');
-describe('interval',function()
+describe('Overlaps',function()
 {
 	test('Test overlaps between Interval(0,1) and Interval(0,3) => true',() =>
 	{
@@ -14,6 +14,7 @@ describe('interval',function()
 		expect(obj1.overlaps(obj2)).toBe(false);
 	});
 });
+
 describe('Interval-Includes',function()
 {
 	test('Test includes between Interval(0,1) and Interval(0,3) => true',() =>
@@ -40,8 +41,8 @@ describe('Interval-Union',function() {
 		var objet2 = new Interval(1, 5);
 		expect(objet1.union(objet2)).toEqual([new Interval(0, 5)]);
 	});
-
 });
+
 describe('test intersection',function()
 {
 	test('intersection between (0,5) and (6,8)',()=>
