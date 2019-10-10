@@ -23,7 +23,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    overlaps(interval) {
+    overlaps(interval) 
+    {
+        return this.end > interval.start && this.start < interval.end;
     };
 
     /**
@@ -88,9 +90,26 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval)
-    {
-
+  
+    intersection(interval) {
+        if(this.overlaps(interval))
+        {
+            if(this.start<interval.start)
+            {
+                if(this.end<interval.end)
+                {
+                    return new Interval(interval.start,this.end);
+                }
+                else return new Interval(interval.start,interval.end);
+            }else
+            {
+                if(this.end<interval.end)
+                {
+                    return new interval(this.start,this.end);
+                }
+                else return new Interval(this.start,interval.end);
+            }
+        }
     };
 
     /**

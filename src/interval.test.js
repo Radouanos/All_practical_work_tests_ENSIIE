@@ -42,3 +42,19 @@ describe('Interval-Union',function() {
 		expect(objet1.union(objet2)).toEqual([new Interval(0, 5)]);
 	});
 });
+
+describe('test intersection',function()
+{
+	test('intersection between (0,5) and (6,8)',()=>
+	{
+		var obj1= new Interval(0,5);
+		var obj2=new Interval(6,8);
+		expect(obj2.intersection(obj1)).toEqual([]);
+	});
+	test('intersection between (0,6) and (2,8)',() =>
+	{
+		var obj1= new Interval(0,6);
+		var obj2=new Interval(2,8);
+		expect(obj2.intersection(obj1)).toEqual(new Interval(2,6));
+	})
+});
