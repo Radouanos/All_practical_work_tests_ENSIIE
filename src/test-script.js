@@ -10,3 +10,4 @@ repository.save({
 console.log(repository.getTotalCount());
 console.log(repository.getTotalPrice());
 console.log(repository.getBookByName("test1"));
+console.log(repository.getCountBookAddedByMonth("test1"));

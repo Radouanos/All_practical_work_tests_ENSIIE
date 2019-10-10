@@ -53,3 +53,49 @@ describe('book repository : Book by name',() =>
         expect(repository.getBookByName("test1")).toBe("{ id: 1, name: 'test1', price: 6.1, added_at: '2019-01-01' }");
     });
 });
+
+describe('count book [books]', function () {
+    let booksExemple = [{
+            "id": 1,
+            "name": "test",
+            "price": 30,
+            "added_at": "2019-01-01"
+        },
+        {
+            "id": 6,
+            "name": "test",
+            "price": 6.1,
+            "added_at": "2019-02-01"
+        },
+        {
+            "id": 7,
+            "name": "test",
+            "price": 6.1,
+            "added_at": "2019-02-01"
+        }];
+
+    test('compter par mois', () => {
+
+        let expected_result = [{  year: '2019', month: 2, count: 1, count_cumulative: 1 }, {year: '2019', month: 3, count: 2, count_cumulative: 3 } ];
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            filter : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(booksExemple)
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(repository.getCountBookAddedByMonth("test")).toStrictEqual(expected_result);
+    });
+
+    test('si le book n\'existe pas dans la base de données', () => {
+        let no_book = [];
+        const dbMock = {
+            get : jest.fn().mockReturnThis(),
+            filter : jest.fn().mockReturnThis(),
+            value : jest.fn().mockReturnValue(no_book)
+        };
+        const repository = new BookRepository(dbMock);
+
+        expect(function () {repository.getCountBookAddedByMonth("testFalse")}).toThrow("livre n\'existe pas");
+    });
+});
