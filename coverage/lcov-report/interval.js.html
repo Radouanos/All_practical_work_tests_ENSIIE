@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">82.35% </span>
+        <span class="strong">85.29% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>28/34</span>
+        <span class='fraction'>29/34</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">78.95% </span>
+        <span class="strong">82.5% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>30/38</span>
+        <span class='fraction'>33/40</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">85.71% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>6/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">82.35% </span>
+        <span class="strong">85.29% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>28/34</span>
+        <span class='fraction'>29/34</span>
       </div>
     </div>
     <p class="quiet">
@@ -219,11 +219,10 @@
 <a name='L171'></a><a href='#L171'>171</a>
 <a name='L172'></a><a href='#L172'>172</a>
 <a name='L173'></a><a href='#L173'>173</a>
-<a name='L174'></a><a href='#L174'>174</a>
-<a name='L175'></a><a href='#L175'>175</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">61x</span>
-<span class="cline-any cline-yes">61x</span>
+<span class="cline-any cline-yes">63x</span>
+<span class="cline-any cline-yes">63x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -368,15 +367,14 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -501,7 +499,7 @@
             {
                 if(this.end&lt;interval.end)
                 {
-                    return new interval(this.start,this.end);
+                    return new Interval(this.start,this.end);
                 }
                 else return new Interval(this.start,interval.end);
             }
@@ -542,17 +540,16 @@
                     return [new Interval(this.start,interv.start),new Interval(this.end,interv.end)];
                 }
                 else return [new Interval(this.start,interv.start),new Interval(interv.end,this.end)];
-            } else <span class="missing-if-branch" title="else path not taken" >E</span>if(this.start&gt;=interv.start &amp;&amp; this.end&gt;=interv.start)
+            }
+                else if(this.start&gt;=interv.start &amp;&amp; this.end&lt;=interv.end)
             {
-                <span class="missing-if-branch" title="else path not taken" >E</span>if(this.start&lt;=interv.end)
-                {
-                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];
-                }
-                else
-                {
-<span class="cstat-no" title="statement not covered" >                    return [new Interval(interv.start,this.start),new Interval(interv.end,this.end)];</span>
-                }
-            } else <span class="cstat-no" title="statement not covered" >if(interv.start&lt;=this.start &amp;&amp; this.start&gt;=interv.end) {</span>
+                return [new Interval(interv.start, this.start), new Interval(this.end, interv.end)];
+            }
+                else <span class="missing-if-branch" title="else path not taken" >E</span>if(this.start&gt;=interv.start &amp;&amp; this.end&gt;=interv.end)
+            {
+                return [new Interval(interv.start, this.start), new Interval(interv.end, this.end)];
+            }
+             else <span class="cstat-no" title="statement not covered" >if(interv.start&lt;=this.start &amp;&amp; this.start&gt;=interv.end) {</span>
 <span class="cstat-no" title="statement not covered" >                return [new Interval(interv.start, interv.end), new Interval(this.start, this.end)];</span>
             }
         }
@@ -574,7 +571,7 @@ module.exports = Interval;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 10 2019 23:06:33 GMT+0200 (GMT+02:00)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Thu Oct 10 2019 23:50:49 GMT+0200 (GMT+02:00)
 </div>
 </div>
 <script src="prettify.js"></script>
