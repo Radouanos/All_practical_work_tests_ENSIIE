@@ -90,7 +90,26 @@ class Interval {
      * @returns {Interval|null}
      */
     intersection(interval) {
+        if(this.overlaps(interval))
+        {
+            if(this.start<interval.start)
+            {
+                if(this.end<interval.end)
+                {
+                    return new Interval(interval.start,this.end);
+                }
+                else return new Interval(interval.start,interval.end);
+            }else
+            {
+                if(this.end<interval.end)
+                {
+                    return new interval(this.start,this.end);
+                }
+                else return new Interval(this.start,interval.end);
+            }
 
+        }
+        else return [];
     };
 
     /**
