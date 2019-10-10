@@ -4,14 +4,14 @@ class Interval {
         this.end = end
     }
 
-    toString() 
-	{
+    toString()
+    {
         return "[" + this.start + "," + this.end + "]";
     }
-	
+
     /**
      * Exemple 1 :
-     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓        
+     *      interval1 =                          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval2 =                                  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
      *      interval1.overlaps(interval2) => true
      *
@@ -43,8 +43,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {boolean}
      */
-    includes(interval) {
-
+    includes(interval)
+    {
+        return this.end >= interval.end && this.start <= interval.start;
     };
 
     /**
@@ -63,8 +64,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    union(interval) {
-
+    union(interval)
+    {
+        return [Math.min(this.start,interval.start),Math.max(this.end,interval.end)];
     };
 
     /**
@@ -83,8 +85,28 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval|null}
      */
-    intersection(interval) {
+    intersection(interval)//1
+    {
+        if(this.overlaps(interval))
+        {
+            if(this.start<interval.start)
+            {
+                if(this.end<interval.end)
+                {
+                    return new Interval(interval.start,this.end);
+                }
+                else return new Interval(interval.start,interval.end);
+            }else
+            {
+                if(this.end<interval.end)
+                {
+                    return new interval(this.start,this.end);
+                }
+                else return new Interval(this.start,interval.end);
+            }
 
+        }
+        else return [];
     };
 
     /**
@@ -103,9 +125,9 @@ class Interval {
      * @param {Interval} interval
      * @returns {Interval[]}
      */
-    exclusion(interval) {
-
-    };
+    exclusion(interv)//2
+    {
+        
 }
 
 module.exports = Interval;
